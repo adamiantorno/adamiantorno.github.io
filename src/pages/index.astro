@@ -1,0 +1,21 @@
+---
+
+import {CV} from "../data/website";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/navbar.astro"
+import About from "../components/About.astro";
+// import Experience from "../components/Experience.astro";
+import Landing from "../components/Landing.astro";
+import Projects from "../components/Projects.astro";
+
+const {name, title} = CV;
+
+---
+
+<Layout title={title}>
+	<Navbar />
+	<Landing />
+	<About />
+	<!-- <Experience /> -->
+	<Projects />
+</Layout>

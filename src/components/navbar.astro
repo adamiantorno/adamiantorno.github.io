@@ -1,0 +1,45 @@
+---
+
+const navItems = [
+    {
+        title: "Home",
+        path: "#home"
+
+    },
+    {
+        title: "About",
+        path: "#about"
+
+    },
+    {
+        title: "Projects",
+        path: "#projects"
+
+    },
+    // {
+    //     title: "Experience",
+    //     path: "/"
+
+    // },
+    {
+        title: "Contact",
+        path: "#contact"
+
+    },
+]
+
+---
+
+<div>
+    <header>
+        <ul>
+            {
+                navItems.map((item, idx) => (
+                    <div>
+                        <a href={item.path}>{item.title}</a>
+                    </div>
+                ))
+            }
+        </ul>
+    </header>
+</div>
