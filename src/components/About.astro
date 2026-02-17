@@ -1,6 +1,60 @@
 ---
+    const contact_links = [
+        {
+            text: 'Github',
+            url: 'https://github.com/adamiantorno'
+        },
+        {
+            text: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/adamiantorno/'
+        },
+    ]
+
 ---
 
 <section id="about">
-    About
+    <div class="container">
+        <span>
+            I want to build innovative and sustainable technologies that help people. 
+        </span>
+        <span>
+            Currently working as a Software Engineer @ Electrans Technologies Ltd, 
+            where we've built an auto-coupling solution for the commerical vehicle industry. 
+            I have previously graduated from the University of Waterloo with 
+            BASc in Mechanical Engineering and Option in Artificial Intelligence. 
+        </span>
+        <span>
+            Want to chat? Get in touch with me below
+        </span>
+    </div>
+    <div class="container">
+        <ul>
+            {
+                contact_links.map((item) => (
+                    <li>
+                        <a href={item.url}>{item.text}</a>
+                    </li>
+                ))
+
+            }
+        </ul>
+        <div>
+            Or email me: adam [dot] iantorno99 [at] gmail [dot] com
+        </div>
+    </div>
 </section>
+
+<style>
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+
+    .text {
+        color: white;
+    }
+
+
+</style>

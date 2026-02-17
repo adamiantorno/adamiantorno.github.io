@@ -16,30 +16,48 @@ const navItems = [
         path: "#projects"
 
     },
-    // {
-    //     title: "Experience",
-    //     path: "/"
-
-    // },
-    {
-        title: "Contact",
-        path: "#contact"
-
-    },
 ]
 
 ---
 
 <div>
-    <header>
-        <ul>
+    <header class="navbar">
+        <div class="nav-container">
             {
-                navItems.map((item, idx) => (
-                    <div>
-                        <a href={item.path}>{item.title}</a>
-                    </div>
+                navItems.map((item) => (
+                    <a href={item.path}>{item.title}</a>
                 ))
             }
-        </ul>
+        </div>
     </header>
 </div>
+
+<style>
+    
+    .navbar {
+        margin: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 20;
+    }
+
+    .nav-container {
+        display: flex;
+        gap: 30px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav-container a {
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+    }
+
+</style>

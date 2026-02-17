@@ -1,21 +1,55 @@
 ---
 
-import {CV} from "../data/website";
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/navbar.astro"
-import About from "../components/About.astro";
-// import Experience from "../components/Experience.astro";
-import Landing from "../components/Landing.astro";
-import Projects from "../components/Projects.astro";
+import Navbar from "../components/navbar.astro";
+import About from "../components/about.astro";
+import Landing from "../components/landing.astro";
+import Projects from "../components/projects.astro";
+import Footer from "../components/footer.astro";
 
-const {name, title} = CV;
+const title = "Adam Iantorno"
 
 ---
 
-<Layout title={title}>
-	<Navbar />
-	<Landing />
-	<About />
-	<!-- <Experience /> -->
-	<Projects />
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div>
+			<Navbar />
+			<Landing />
+			<About />
+			<Projects />
+			<Footer />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;  
+		-webkit-box-sizing: border-box;
+     	-moz-box-sizing: border-box;
+	}
+
+	body {
+		margin-top: -2px;
+		background-color: #5a4594;
+	}
+
+	section {
+		width: 100vw;
+		min-height: 200px;
+		background-color: #5a4594;
+		/* background-color: #3d2c6b; */
+	}
+
+</style>
