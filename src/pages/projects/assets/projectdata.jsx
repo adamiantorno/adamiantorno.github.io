@@ -38,7 +38,7 @@ import robotArmCircuitSchematic from "./imgs/robotArmCircuitSchematic.png";
 const ProjData = [
 	{
 		id: "10",
-		title: "Autonomed Pressure Relief Mattress",
+		title: "Automated Pressure Relief Mattress",
 		category_ids: ['Mechanical', 'Electrical', 'Software'],
 		date: "2023-2024",
 		skills: [
@@ -47,7 +47,7 @@ const ProjData = [
 			<Container>
 				<Row>
 					<p className="italics">
-						THIS SECTION IS IN PROGRESS!!!!... Coming Soon
+						THIS SECTION IS IN PROGRESS! Coming Soon...
 					</p>
 				</Row>
 			</Container>

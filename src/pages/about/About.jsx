@@ -19,14 +19,14 @@ export default function About() {
     const skillsetProg = ['Python', 'Javascript', 'ROS (1 & 2)', 'C++'];
     const skillsetOther = ['Git', 'Rest APIs', 'Arduino', 'Linux (Shell)'];
 
-    const JuniorAILink = (
+    const ElectransLink = (
         <a
-            href="https://www.getjuniorai.com"
+            href="https://electranstech.com/"
             target="_blank"
             rel="noreferrer noopener"
             className="inline-link"
         >
-            Junior AI
+            Electrans Technologies Ltd.
         </a>
     );
 
@@ -54,9 +54,9 @@ export default function About() {
                                 and building things in robotics, entrepreneurship, and automation.
                             </p>
                             <p>
-                                Most recently, I was working as a Software Developer at a start-up
-                                called {JuniorAILink} that was focused on integrating machine learning
-                                into the legal and documentation industry.
+                                I am currently working as a Software Engineer at a start-up
+                                called {ElectransLink}, where we've built an auto-coupling solution
+                                for the commerical vehicle industry.
                             </p>
                         </Col>
                         <Col>
@@ -121,8 +121,8 @@ export default function About() {
                                     I am oftentimes reading a sci-fi or fantasy novel, but I make 
                                     sure to mix in a science or business book too. I am currently 
                                     reading{' '}<span className="italics">Never Split the Differece by Chris Voss</span>,
-                                    which is a handbook of negotating principles culled from Chris\
-                                    Voss's career has both hostage negotiator and business teacher. 
+                                    which is a handbook of negotating principles from Chris
+                                    Voss's career as both a hostage negotiator and businessman. 
                                 </p>
                                 <p>
                                     I tend to stay active with a variety of different activities 
