@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.f4c43ed6.css",
-    "main.js": "/static/js/main.ac40c6ba.js",
-    "static/js/453.24c88e97.chunk.js": "/static/js/453.24c88e97.chunk.js",
+    "main.css": "/static/css/main.92b754ec.css",
+    "main.js": "/static/js/main.d1d0ff35.js",
+    "static/js/453.dcaaf7e6.chunk.js": "/static/js/453.dcaaf7e6.chunk.js",
     "static/media/coverTurnCare.JPEG": "/static/media/coverTurnCare.eac1d33b65e7c451dd7b.JPEG",
     "static/media/arduinoSolder.jpeg": "/static/media/arduinoSolder.2954becca358aa2541bc.jpeg",
     "static/media/hilArduinoBread.jpg": "/static/media/hilArduinoBread.ee84a3f75dd8b62d2fe3.jpg",
@@ -26,7 +26,6 @@
     "static/media/arduinoCad.png": "/static/media/arduinoCad.5e59fd74bf9532523000.png",
     "static/media/uwaftGroup.jpg": "/static/media/uwaftGroup.4e33e37973bed46d5392.jpg",
     "static/media/robotArmGripperDesigns.png": "/static/media/robotArmGripperDesigns.0e722af45b8b3f6d9172.png",
-    "static/media/AdamIantorno_Web_Resume.pdf": "/static/media/AdamIantorno_Web_Resume.d9e88cfea762bb2b4a5b.pdf",
     "static/media/cftrackerGraph2.png": "/static/media/cftrackerGraph2.2c75526e1973f330d596.png",
     "static/media/hilArduinoCircuit.png": "/static/media/hilArduinoCircuit.bed390f3bcc996762df2.png",
     "static/media/robotArmManipulatorDesign.png": "/static/media/robotArmManipulatorDesign.631e4ef18343cdb1d55b.png",
@@ -47,12 +46,12 @@
     "static/media/cftrackerInput.png": "/static/media/cftrackerInput.70437117eaab258f718d.png",
     "static/media/coverCftracker.png": "/static/media/coverCftracker.fdc58aacb48b4d1fa041.png",
     "index.html": "/index.html",
-    "main.f4c43ed6.css.map": "/static/css/main.f4c43ed6.css.map",
-    "main.ac40c6ba.js.map": "/static/js/main.ac40c6ba.js.map",
-    "453.24c88e97.chunk.js.map": "/static/js/453.24c88e97.chunk.js.map"
+    "main.92b754ec.css.map": "/static/css/main.92b754ec.css.map",
+    "main.d1d0ff35.js.map": "/static/js/main.d1d0ff35.js.map",
+    "453.dcaaf7e6.chunk.js.map": "/static/js/453.dcaaf7e6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4c43ed6.css",
-    "static/js/main.ac40c6ba.js"
+    "static/css/main.92b754ec.css",
+    "static/js/main.d1d0ff35.js"
   ]
 }
