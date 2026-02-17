@@ -1,11 +1,11 @@
 ---
-title: "Fitness Tracking App"
-description: "Cross-platform mobile app for tracking workouts, nutrition, and fitness goals"
-category: "Mobile App"
-tags: ["React Native", "Firebase", "TypeScript"]
-image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80"
-link: "https://example.com/fitness-app"
-date: 2024-02-20
+project_id: 6
+title: "Autonomous Robot Arm"
+description: "A pick-and-place manipulator that uses object detection and inverse kinematics to move objects autonomously"
+category: ["Software", "Electrical"]
+tags: ["Python", "C++", "Arduino", "Motor Drivers"]
+image: "assets/coverRobotArm.png"
+date_string: Jan 2023 - May 2023
 ---
 
 ## Project Vision

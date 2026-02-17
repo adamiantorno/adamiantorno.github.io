@@ -1,4 +1,5 @@
 ---
+project_id: 4
 title: "Arduino Enclosure"
 description: "A custom enclosure with LCD intergration and hardware UI to control a test fixture."
 categories: ["Mechanical"]
@@ -10,7 +11,7 @@ date_string: "Winter 2022"
 
 This was a subproject for the Hardware Testing fixture project. After the entire HIL test fixture had been assembled and was operating as expected, there were three main points of improvement. First, the switches were too small and soldered too close together which made it difficult to operate one without affecting another. Second, the LCD was also tilted at an angle that made it difficult to see when standing above the test fixture. Finally, all wiring should be hidden or strapped down to prevent it from interacting with or getting confused for the test fixture’s wire harness.
 
-![Initial implementation of test fixture arduino](assets/arduinoInitial.png)
+![Initial implementation of test fixture arduino](/assets/arduinoInitial.png)
 *Initial implementation of test fixture arduino*
 
 # Solution

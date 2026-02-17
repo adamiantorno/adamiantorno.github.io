@@ -6,6 +6,7 @@ import { z } from 'astro/zod';
 const projectsCollection = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/data/projects" }),
     schema: z.object({
+        project_id: z.number(),
         title: z.string(),
         description: z.string(),
         categories: z.array(z.string()).optional(),

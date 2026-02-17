@@ -1,10 +1,11 @@
 ---
+project_id: 7
 title: "Automated Pressure Relief Mattress"
-description: "Design and drawings of mounting brackets for pneuamtincs cylinders on truck."
+description: "A 16-cell air mattress with automated inflation to prevent pressure ulcers, featuring a mobile app for real-time monitoring and manual control"
 categories: ["Electrical", "Software"]
 tags: ["Python", "Raspberry Pi", "I2C", "Mutlithreading", "PCB Design"]
-image: "assets/coverBracket.jpg"
-date_string: "Winter 2022"
+image: "assets/coverTurnCare.JPEG"
+date_string: "Sept 2023 - Mar 2024"
 ---
 
 # Coming Soon...
