@@ -1,12 +1,29 @@
+// Software Developed by Adam Iantorno for Portfolio Website 2024
+
 import IMLogo from './logos/IMLogo.png'
 import ElectransLogo from './logos/ElectransLogo.png'
 import GrantMatchLogo from './logos/GrantmatchLogo.png'
 import UwaftLogo from './logos/UwaftLogo.jpg'
 import FLogo from './logos/416Logo.jpg'
+import JuniorAILogo from "./logos/JuniorAILogo.png"
 
 const ExpData = [
     {
         id: 0,
+        company: 'JuniorAI',
+        title: 'Sofware Engineering Intern',
+        period: 'May - December 2023',
+        link: 'https://www.getjuniorai.com',
+        img: JuniorAILogo,
+        desc: [
+        'Building core functionality and infrastructure for custom Microsoft Word Add-in that uses machine learning to perform operations on document based on user command/queries',
+        'Spearheaded development of autocomplete/predictive text feature of user queries based on n-gram natural language algorithm; built with Python and Flask API.',
+        'Programming key UI features and updating back-end functionality based on user feedback',
+        ],
+        techonologies: ['React', 'Python', 'Machine Learning (Natual Language Processing)', 'REST APIs'],
+    },
+    {
+        id: 1,
         company: "Impossible Metals",
         title: "Robotics Developer",
         period: "September - December 2022",
@@ -19,7 +36,7 @@ const ExpData = [
         
     },
     {
-        id: 1,
+        id: 2,
         company: "Electrans",
         title: "Mechatronics Engineer",
         period: "January - April 2022",
@@ -32,7 +49,7 @@ const ExpData = [
         techonologies: ['Solidworks', 'Arduino & C++', 'Circuit Maker']
     },
     {
-        id: 2,
+        id: 3,
         company: "GrantMatch",
         title: "Junior Software Engineer",
         period: "May - October 2021",
@@ -44,7 +61,7 @@ const ExpData = [
         techonologies: ['Python (Django)', 'VueJS', 'SQL']
     },
     {
-        id: 3,
+        id: 4,
         company: "UWAFT",
         title: "Sensor Diagnostics Team Lead",
         period: "September 2019 - August 2020",
@@ -56,7 +73,7 @@ const ExpData = [
         techonologies: ['C++', 'ROS']
     },
     {
-        id: 4,
+        id: 5,
         company: "416 Automation",
         title: "Quality Assurance Engineer",
         period: "January - April 2020",

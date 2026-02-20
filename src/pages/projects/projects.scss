@@ -202,6 +202,22 @@
     }
 }
 
+.card-9 {
+    .card-img, .card-img-hovered {
+        background-image: var(--card-img-hovered-overlay),
+            url(./assets/imgs/coverRobotArm.png);
+    }
+}
+
+.card-10 {
+    .card-img, .card-img-hovered {
+        background-image: var(--card-img-hovered-overlay),
+            url(./assets/imgs/coverTurnCare.JPEG);
+    }
+}
+
+
+
 .modal {
     &-70w {
         min-width: 70%;
@@ -234,6 +250,7 @@
     p {
         font-size: $text-standard-size;
         text-indent: 40px;
+        text-align: left !important;
 
         @media screen and (max-width: $mobile-width) {
             font-size: 1em;
@@ -349,4 +366,3 @@
     width: 100%;
     position: absolute;
 }
-  

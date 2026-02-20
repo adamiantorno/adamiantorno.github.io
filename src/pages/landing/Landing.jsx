@@ -8,7 +8,7 @@ import "./landing.scss";
 
 export default function Landing() {
 
-  const adjectives = ['Engineering Student', 'Innovator', 'Self-Starter']
+  const adjectives = ['Engineer', 'Innovator', 'Self-Starter']
 
   return (
     <section id='home'>

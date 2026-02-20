@@ -85,6 +85,13 @@ export default function Experience() {
                                         </ul>
                                     </Col>
                                 </Row>
+                                <Row className='job-tags'>
+                                    <ul>
+                                        {item.techonologies.map((tech) => (
+                                            <li>{tech}</li>
+                                        ))}   
+                                    </ul>   
+                                </Row>
                             </Container>
                         ))}
                     </Col>

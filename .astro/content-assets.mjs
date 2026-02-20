@@ -1,0 +1,10 @@
+
+import __ASTRO_IMAGE_IMPORT_1AGY6x from "assets/arduinoInitial.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md";
+import __ASTRO_IMAGE_IMPORT_107X7u from "assets/arduinoCad.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md";
+import __ASTRO_IMAGE_IMPORT_ZdcG7a from "assets/arduinoSolder.jpeg?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md";
+import __ASTRO_IMAGE_IMPORT_Z2hyvMP from "assets/coverArduino.jpg?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md";
+import __ASTRO_IMAGE_IMPORT_Zcdeor from "assets/bracketDisplay.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Fbrackets.md";
+import __ASTRO_IMAGE_IMPORT_Z8eddP from "assets/coverBracket.jpg?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Fbrackets.md";
+import __ASTRO_IMAGE_IMPORT_Z24EdkY from "../../../public/assets/arduinoInitial.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md";
+export default new Map([["assets/arduinoInitial.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md", __ASTRO_IMAGE_IMPORT_1AGY6x], ["assets/arduinoCad.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md", __ASTRO_IMAGE_IMPORT_107X7u], ["assets/arduinoSolder.jpeg?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md", __ASTRO_IMAGE_IMPORT_ZdcG7a], ["assets/coverArduino.jpg?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md", __ASTRO_IMAGE_IMPORT_Z2hyvMP], ["assets/bracketDisplay.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Fbrackets.md", __ASTRO_IMAGE_IMPORT_Zcdeor], ["assets/coverBracket.jpg?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Fbrackets.md", __ASTRO_IMAGE_IMPORT_Z8eddP], ["../../../public/assets/arduinoInitial.png?astroContentImageFlag=&importer=src%2Fdata%2Fprojects%2Farduino-enclosure.md", __ASTRO_IMAGE_IMPORT_Z24EdkY]]);
+		

@@ -1,7 +1,10 @@
+// Software Developed by Adam Iantorno for Portfolio Website 2024
+
 import React, { useState } from 'react';
-import { Modal, Button, Col } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 
 import { motion } from 'framer-motion';
+
 
 export default function ProjectCard({ key, item }) {
   const [show, setShow] = useState(false);

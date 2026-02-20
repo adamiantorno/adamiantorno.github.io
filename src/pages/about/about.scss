@@ -1,5 +1,11 @@
+// Software Developed by Adam Iantorno for Portfolio Website 2024
+
 @import "../../scss/variables";
 @import "../../scss/styles";
+
+// .splitter {
+//   margin: 10px !important;
+// }
 
 .about {
     &-text {
@@ -20,6 +26,7 @@
     &-pic {
         &-self {
             height: 50vh;
+            margin-bottom: 20px;
         }
 
         &-fun {
@@ -35,6 +42,8 @@
     }
 
     &-tech {
+        padding-bottom: 15px;
+
         span {
             font-size: 1.75rem;
             font-weight: bold;
