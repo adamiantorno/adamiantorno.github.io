@@ -38,7 +38,8 @@
       "required": [
         "project_id",
         "title",
-        "description"
+        "description",
+        "categories"
       ],
       "additionalProperties": false
     }
