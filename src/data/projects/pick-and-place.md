@@ -2,9 +2,9 @@
 project_id: 6
 title: "Autonomous Robot Arm"
 description: "A pick-and-place manipulator that uses object detection and inverse kinematics to move objects autonomously"
-category: ["Software", "Electrical"]
+categories: ["Software", "Electrical"]
 tags: ["Python", "C++", "Arduino", "Motor Drivers"]
-image: "assets/coverRobotArm.png"
+image: "src/data/images/coverRobotArm.png"
 date_string: Jan 2023 - May 2023
 ---
 
