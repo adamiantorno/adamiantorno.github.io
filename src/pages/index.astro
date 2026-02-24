@@ -1,10 +1,13 @@
 ---
 
-import Navbar from "../components/navbar.astro";
-import About from "../components/about.astro";
-import Landing from "../components/landing.astro";
-import Projects from "../components/projects.astro";
-import Footer from "../components/footer.astro";
+import '@fontsource/work-sans';
+
+import Navbar from "../components/Navbar.astro";
+import About from "../sections/About.astro";
+import Landing from "../sections/Landing.astro";
+import Projects from "../sections/Projects.astro";
+import Footer from "../components/Footer.astro";
+import Quote from "../components/Quote.astro";
 
 const title = "Adam Iantorno"
 
@@ -23,6 +26,7 @@ const title = "Adam Iantorno"
 		<div>
 			<Navbar />
 			<Landing />
+			<Quote />
 			<About />
 			<Projects />
 			<Footer />
@@ -40,9 +44,14 @@ const title = "Adam Iantorno"
      	-moz-box-sizing: border-box;
 	}
 
+	html {
+		scroll-behavior: smooth;
+	}
+
 	body {
 		margin-top: -2px;
 		background-color: #5a4594;
+		font-family: "Work Sans";
 	}
 
 	body:has(dialog[open]) {
@@ -53,7 +62,14 @@ const title = "Adam Iantorno"
 		width: 100vw;
 		min-height: 200px;
 		background-color: #5a4594;
-		/* background-color: #3d2c6b; */
+		scroll-margin-top: 60px;
+	}
+
+	.container {
+		width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 	}
 
 </style>

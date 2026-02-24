@@ -23,11 +23,19 @@ const navItems = [
 <div>
     <header class="navbar">
         <div class="nav-container">
-            {
-                navItems.map((item) => (
-                    <a href={item.path}>{item.title}</a>
-                ))
-            }
+            <ul class="nav-list">
+                {
+                    navItems.map((item) => (
+                        <li class="nav-item">
+                            <a 
+                                class="nav-link" 
+                                href={item.path}>
+                                    {item.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
         </div>
     </header>
 </div>
@@ -35,29 +43,84 @@ const navItems = [
 <style>
     
     .navbar {
-        margin: 0;
+        margin: auto;
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 20;
+        z-index: 10;
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     }
 
     .nav-container {
-        display: flex;
-        gap: 30px;
-        flex-direction: row;
-        justify-content: center;
+        width: 100%;
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     }
 
-    .nav-container a {
-        display: block;
-        text-align: center;
-        padding: 20px 0;
+    .navbar.scrolled .nav-container {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-list {
+        height: 60px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2.5rem;
+        padding-left: 36vw;
+    }
+
+    .nav-item {
+        display: flex;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        padding: 0 1.5rem;
         text-decoration: none;
-        font-size: 1.5rem;
-        font-weight: bold;
         text-transform: uppercase;
-        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        opacity: 60%;
+    }
+
+    .nav-link:hover {
+        opacity: 100%;
+    }
+
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover::before {
+        transform: scale(1);
     }
 
 </style>
+
+<script>
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar") as HTMLElement;
+
+        if (window.scrollY > 10) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+</script>

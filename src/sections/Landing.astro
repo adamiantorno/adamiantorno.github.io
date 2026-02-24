@@ -1,0 +1,58 @@
+---
+
+import CustomTypewriter from "../components/CustomTypewriter.astro"
+
+---
+
+<section id="home">
+    <div class="hero">
+        <div class="container">
+            <div class="content">
+                <CustomTypewriter 
+                    class:list={["name"]}
+                    messages={["Adam", "Iantorno"]}
+                    writeSpeed={150}
+                    waitWritten={800}
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    .hero {
+        position: relative;
+        height: 100vh;
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+            url(/assets/adambackground.jpg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        text-align: center;
+        padding-left: 32vw;
+        margin-bottom: 20px;
+    }
+
+    .name {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        font-size: 5.5rem;
+        font-weight: 900;
+        text-shadow: 2px 2px 8px #fff;
+    }
+
+</style>

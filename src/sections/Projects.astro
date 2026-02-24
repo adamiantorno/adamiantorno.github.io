@@ -1,6 +1,6 @@
 ---
-import { addIssueToContext } from "astro:schema";
-import ProjectCard from "./projectcard.astro";
+
+import ProjectCard from "../components/ProjectCard.astro";
 
 import { getCollection, type CollectionEntry } from "astro:content";
 
@@ -15,9 +15,7 @@ const sorted_projects = projects.sort((p_a, p_b) => {
 
 <section id="projects">
     <div class="container">
-        <h1>Projects</h1>
-    </div>
-    <div class="container">
+        <h1 class="header">Projects</h1>
         <div>
             <div class="projects-grid">
                 {sorted_projects.map((project) => <ProjectCard project={project} />)}
@@ -38,18 +36,31 @@ const sorted_projects = projects.sort((p_a, p_b) => {
 </section>
 
 <style>
-    .container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+    #projects {
+        --color-white: #fff;
     }
 
-    .filter-buttons {
-        margin: 10px 0;
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
     }
-    
+
+    .header {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 10px 0px;
+        text-shadow: 0 0 5px #000, 0px 0px 50px #000;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
 </style>
 
 <script>
