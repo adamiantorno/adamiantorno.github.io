@@ -1,63 +1,69 @@
 ---
 
-import { render } from "astro:content";
-import { type CollectionEntry } from "astro:content";
+import type { Project } from '../project/projects';
 
 interface Props {
-    project: CollectionEntry<"projects">
-};
+    project: Project;
+}
 
 const { project } = Astro.props;
-const { data } = project;
-const { Content } = await render(project);
 
+
+const dialogId = `project-dialog-${project.pk}`;
 ---
-<div class="card-wrapper">
-    <button 
-        class="project-card" 
-        data-project-id={data.project_id}
-        aria-label={`View details for ${data.title}`}>
-        
-        <div class="card-content">
 
+<div class="card-wrapper">
+    <button
+        class="project-card"
+        data-dialog-target={dialogId}
+        aria-label={`View details for ${project.title}`}
+    >
+        <div class="card-content">
             <div class="card-img">
-                <img src={data.image} alt={data.title} class="img-body">
+                <img src={project.cover_image} alt={project.title} class="img-body" />
             </div>
 
             <div class="card-header">
-                {data.title}
+                {project.title}
             </div>
 
             <div class="card-tags">
-                {data.tags?.map((tag) => (
-                    <span class="p-tag">{tag} </span>
-                ))}
+                {project.tags?.map((tag) => <span class="p-tag">{tag} </span>)}
             </div>
 
             <div class="card-desc">
-                {data.description}
+                {project.description}
             </div>
 
-            <div class="details-link">
-                click for more details
-            </div>
+            <div class="details-link">click for more details</div>
         </div>
-
     </button>
 </div>
 
-
-<!-- Hidden content for dialog -->
-<div id={`project-content-${data.project_id}`} style="display: none;">
-  <div class="dialog-body">
-    <div class="prose">
-        <Content />
+<!-- Hidden dialog -->
+<dialog id={dialogId} class="project-dialog">
+    <div class="dialog-header">
+        <div class="dialog-meta">
+            <h2 class="dialog-title">{project.title}</h2>
+            {
+                project.tags && (
+                    <div class="dialog-tags">
+                        {project.tags?.map((tag) => (
+                            <span class="dialog-tag">{tag}</span>
+                        ))}
+                    </div>
+                )
+            }
+        </div>
+        <button class="close-btn" aria-label="Close dialog"> ✕ </button>
     </div>
-  </div>
-</div>
+
+    <div class="dialog-body">
+        HELLO
+    </div>
+</dialog>
 
 <style>
-
     .card-wrapper {
         height: 100%;
     }
@@ -65,7 +71,7 @@ const { Content } = await render(project);
     .project-card {
         width: 100%;
         height: 100%;
-        background-color: #0B0B3A;
+        background-color: #0b0b3a;
         border-radius: 3px;
         border: none;
         overflow: hidden;
@@ -74,12 +80,14 @@ const { Content } = await render(project);
         display: flex;
         flex-direction: column;
         text-align: left;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
     }
 
     .project-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 0px 35px rgba(0,0,0,0.4);
+        box-shadow: 0 0px 35px rgba(0, 0, 0, 0.4);
     }
 
     .card-content {
@@ -95,7 +103,7 @@ const { Content } = await render(project);
         overflow: hidden;
         padding-bottom: 1rem;
         margin-bottom: 0.5rem;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .img-body {
@@ -108,7 +116,7 @@ const { Content } = await render(project);
         font-size: 1.2rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
-        color: #8EEAE5;
+        color: #8eeae5;
     }
 
     .card-tags {
@@ -121,18 +129,17 @@ const { Content } = await render(project);
     .p-tag {
         font-size: 0.8rem;
         padding: 4px 8px;
-        background: rgba(255,255,255,0.08);
+        background: rgba(255, 255, 255, 0.08);
         border-radius: 999px;
         color: #c6bbe2;
     }
 
     .card-desc {
-        color: #F0E9CD;
+        color: #f0e9cd;
         font-size: 0.95rem;
         line-height: 1.5;
         margin-bottom: 1rem;
     }
-
 
     .details-link {
         margin-top: auto;
@@ -142,9 +149,91 @@ const { Content } = await render(project);
         letter-spacing: 0.05em;
         color: #ffffff;
         opacity: 0.7;
-        border-top: 1px solid rgba(255,255,255,0.08);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
         transition: opacity 0.2s ease;
     }
 
-</style>
+    /* =========================
+    Dialog
+    ========================= */
 
+    .project-dialog {
+        width: 75vw;
+        max-height: 90vh;
+        border: none;
+        border-radius: 8px;
+        background: #0b0b3a;
+        color: #f0e9cd;
+        display: none;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .project-dialog[open] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-dialog::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+    }
+
+    .dialog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .dialog-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .dialog-title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #8eeae5;
+    }
+
+    .dialog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .dialog-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        color: #c6bbe2;
+    }
+
+    .close-btn {
+        background: transparent;
+        border: none;
+        font-size: 1.25rem;
+        color: #ffffff;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    .dialog-body {
+        padding: 2rem 3rem;
+        overflow-y: auto;
+    }
+
+</style>

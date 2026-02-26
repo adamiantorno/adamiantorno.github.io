@@ -1,13 +1,11 @@
 ---
 
 import ProjectCard from "../components/ProjectCard.astro";
+import { PORTFOLIO_PROJECTS } from "../data/projects";
 
-import { getCollection, type CollectionEntry } from "astro:content";
-
-const projects: CollectionEntry<"projects">[] = await getCollection("projects");
-const sorted_projects = projects.sort((p_a, p_b) => {
-    if (p_a.data.project_id < p_b.data.project_id) return 1;
-    if (p_a.data.project_id > p_b.data.project_id) return -1;
+const sorted_projects = PORTFOLIO_PROJECTS.sort((p_a, p_b) => {
+    if (p_a.pk < p_b.pk) return 1;
+    if (p_a.pk > p_b.pk) return -1;
     return 0;
 })
 
@@ -21,17 +19,6 @@ const sorted_projects = projects.sort((p_a, p_b) => {
                 {sorted_projects.map((project) => <ProjectCard project={project} />)}
             </div>
         </div>
-    </div>
-
-    <div>
-        <dialog id="project-dialog" class="project-dialog">
-            <div class="dialog-content">
-                <button class="close-btn" aria-label="Close dialog">
-                    Close
-                </button>
-            </div>
-            <div id="dialog-body"></div>
-        </dialog>
     </div>
 </section>
 
@@ -65,8 +52,6 @@ const sorted_projects = projects.sort((p_a, p_b) => {
 
 <script>
 
-    const projectCards = document.querySelectorAll<HTMLElement>(".project-card");
-
     function closeDialog(d: HTMLDialogElement) {
         d?.close();
     }
@@ -88,31 +73,27 @@ const sorted_projects = projects.sort((p_a, p_b) => {
             }
         });
 
+        return;
     }
 
-
     // Dialog functionality
-    const dialog = document.getElementById('project-dialog') as HTMLDialogElement;
-    const dialogBody = document.getElementById('dialog-body');
-    const closeBtn = document.querySelector('.close-btn');
+    const projectCards = document.querySelectorAll<HTMLElement>(".project-card");
 
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
-            const projectId = card.getAttribute('data-project-id');
+            const dialogId = card.getAttribute('data-dialog-target');
+            if (dialogId) {
+                const dialog = document.getElementById(dialogId) as HTMLDialogElement;
 
-            if (projectId && dialogBody) {
-                const contentElement = document.getElementById(`project-content-${projectId}`);
-                if (contentElement) {
-                    dialogBody.innerHTML = contentElement.innerHTML;
-                    openDialog(dialog);
-                }
+                const closeBtn = dialog.querySelector('.close-btn');
+                closeBtn?.addEventListener('click', () => {
+                    closeDialog(dialog);
+                })
+
+                openDialog(dialog);
+                return;
             }
         });
     });
-
-    closeBtn?.addEventListener('click', () => {
-        closeDialog(dialog);
-    });
-
 
 </script>

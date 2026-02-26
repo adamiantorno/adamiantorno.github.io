@@ -1,0 +1,86 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<div class="prose">
+    <slot />
+</div>
+
+<style is:global>
+
+    .prose img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+        margin: 1.5rem auto;
+        border-radius: 6px;
+        object-fit: contain;
+    }
+
+    .prose h1,
+    .prose h2,
+    .prose h3,
+    .prose h4 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #8eeae5;
+        font-weight: 600;
+    }
+
+    .prose > :first-child { 
+        margin-top: 0;
+    }
+
+    /* Small images centered */
+    .prose img[src][width]:not([width="100%"]) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .prose p {
+        line-height: 1.5;
+        font-size: 0.9rem;
+    }
+
+    /* Captions (markdown uses italics under the image in your markdown) */
+    .prose em {
+        display: block;
+        text-align: center;
+        font-style: italic;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+        margin-bottom: 1.5rem;
+        color: #c6bbe2;
+    }
+
+    /* Spacing for lists */
+    .prose ul,
+    .prose ol {
+        margin: 1rem 0 1rem 1.25rem;
+        padding-left: 0;
+    }
+
+    /* Links */
+    .prose a {
+        color: #8eeae5;
+        text-decoration: underline;
+    }
+
+    /* Blockquotes */
+    .prose blockquote {
+        margin: 1.5rem 0;
+        padding: 1rem 1.25rem;
+        border-left: 3px solid rgba(142, 234, 229, 0.5);
+        background: rgba(255, 255, 255, 0.03);
+        color: #c6bbe2;
+        border-radius: 4px;
+    }
+
+    /* Horizontal rule */
+    .prose hr {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 2rem 0;
+    }
+
+</style>
