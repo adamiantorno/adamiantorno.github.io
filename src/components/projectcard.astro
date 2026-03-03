@@ -1,6 +1,7 @@
 ---
 
-import type { Project } from '../project/projects';
+import DialogBody from './DialogBody.astro';
+import type { Project } from '../data/projects.ts';
 
 interface Props {
     project: Project;
@@ -58,8 +59,8 @@ const dialogId = `project-dialog-${project.pk}`;
         <button class="close-btn" aria-label="Close dialog"> ✕ </button>
     </div>
 
-    <div class="dialog-body">
-        HELLO
+    <div class="dialog-main-wrapper">
+        <DialogBody dialog={project.dialog_body} />
     </div>
 </dialog>
 
@@ -231,7 +232,7 @@ const dialogId = `project-dialog-${project.pk}`;
         transform: scale(1.1);
     }
 
-    .dialog-body {
+    .dialog-main-wrapper {
         padding: 2rem 3rem;
         overflow-y: auto;
     }

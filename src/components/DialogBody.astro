@@ -1,0 +1,217 @@
+---
+
+import type { ProjectDialog } from "../data/projects";
+
+interface Props {
+    dialog: ProjectDialog;
+}
+
+const { dialog } = Astro.props;
+
+const has_grid_content =
+    dialog.features.length > 0 ||
+    dialog.learnings.length > 0 ||
+    dialog.challenges.length > 0 ||
+    dialog.links.length > 0;
+
+---
+
+<div class="dialog-body">
+    <div>
+        <h1 class="header">Overview</h1>
+        <div class="prose-block">
+            {
+                dialog.overview.map((paragraph) => (
+                    <p class="prose">{paragraph}</p>
+                ))
+            }
+        </div>
+        { has_grid_content && <hr /> }
+
+        { has_grid_content && (
+            <div class="dialog-grid">
+                {dialog.features.length > 0 && (
+                    <div class="grid-section">
+                        <h2>Features</h2>
+                        <ul>
+                            {
+                                dialog.features.map((item) => (
+                                    <li>
+                                        <p class="prose">{item}</p>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                )}
+                {dialog.learnings.length > 0 && (
+                    <div class="grid-section">
+                        <h2>Learnings</h2>
+                        <ul>
+                            {
+                                dialog.learnings.map((item) => (
+                                    <li>
+                                        <p class="prose">{item}</p>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                )}
+                {dialog.challenges.length > 0 && (
+                    <div class="grid-section">
+                        <h2>Challenges</h2>
+                        <ul>
+                            {
+                                dialog.challenges.map((item) => (
+                                    <li>
+                                        <p class="prose">{item}</p>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                )}
+                {dialog.links.length > 0 ? (
+                    <div class="grid-section">
+                        <h2>Links</h2>
+                        <div class="dialog-links">
+                            {dialog.links.map((item) => (
+                                <a 
+                                    class="dialog-link" 
+                                    href={item.url}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >
+                                    {item.name} &#8599
+                                </a>
+                            ))}
+                        </div>
+                    </div> 
+                ) : (
+                    <div class="closed-source">
+                        Project is closed sourced.
+                    </div>
+                )}
+            </div>
+        )}
+        {dialog.gallery && (
+            <div>
+                <hr />
+                <h1>Gallery</h1>
+                <div class="gallery-grid">
+                    {
+                        dialog.gallery.map((img) => (
+                            <div class="gallery-img">
+                                <img src={img.ref} alt="" class="img-body" />
+                                <em class="img-caption">{img.caption}</em>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        )}
+    </div>
+</div>
+
+<style>
+
+    .header {
+        margin: 0 0 0.6rem 0;
+    }
+
+    .prose-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .prose {
+        line-height: 1.5;
+        font-size: 1.0rem;
+        margin: 0;
+        color: inherit;
+    }
+
+    hr {
+        margin: 1.5rem 0;
+    }
+
+    .dialog-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .grid-section h2 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin: 0 0 0.6rem 0;
+        opacity: 0.6;
+    }
+
+    .grid-section ul {
+        margin: 0;
+        padding-left: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .dialog-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+    }
+
+    .dialog-link {
+        text-decoration: none;
+        font-size: 1.25rem;
+        padding: 8px 12px;
+        color: inherit;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 6px;
+        border-color: inherit;
+    }
+
+    .dialog-link:hover {
+        background: rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease;
+    }
+
+    .closed-source {
+        font-size: 0.875rem;
+        opacity: 0.4;
+        font-style: italic;
+        margin: 1rem 0rem;
+    }
+
+    .gallery-grid {
+        margin-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gallery-img {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-body {
+        width: 100%;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+
+    .img-caption {
+        margin-top: 0.4rem;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        font-style: italic;
+    }
+
+</style>
