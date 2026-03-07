@@ -1,0 +1,253 @@
+---
+
+---
+
+<section id="about">
+    <div class="container">
+        <div class="content">
+            <p class="text main-body">
+                Hi, I'm Adam. I want to build innovative and sustainable technologies that help people.
+            </p>
+            <p class="text main-body">
+                Currently working as a Software Engineer
+                <a href="https://electranstech.com/"             
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="underline-link inline-link">
+                    @ Electrans Technologies Ltd.</a>, where we've built an autonomous 
+                coupling solution for the commerical vehicle industry. Previously 
+                graduated from the University of Waterloo with a Bachelor's of Applied 
+                Science and Option in Artificial Intelligence in the co-op program. 
+            </p>
+            <p class="text main-body">
+                I enjoy combining mechanical design, embedded systems, and scalable 
+                software to solve real-world problems.
+            </p>
+            <p class="text main-body">
+                Want to chat? Get in touch with me below
+            </p>
+            <div class="link-container">
+                <a 
+                    class="underline-link contact-link" 
+                    target="_blank" 
+                    rel="noreferrer noopener" 
+                    href="https://github.com/adamiantorno">@Github</a>
+                <a 
+                    class="underline-link contact-link" 
+                    target="_blank" 
+                    rel="noreferrer noopener" 
+                    href="https://www.linkedin.com/in/adamiantorno/">@LinkedIn</a>
+            </div>
+            <div class="link-container">
+                <button class="contact-btn-link" id="email-btn">Email: 
+                    <span class="email-tag underline-link">adam [dot] iantorno99 [at] gmail [dot] com</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="snackbar">email copied to clipboard!</div>
+</section>
+
+<style> 
+
+    #about {
+        --main-text-shadow: 0 0 5px #000, 0 2px 16px #1d1631, 0px 0px 50px #000;
+        --main-font-size: 1.05rem;
+        --link-font-size: 1rem;
+    }
+
+
+    .container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .text {
+        font-size: var(--main-font-size);
+        color: var(--color-white);
+        text-shadow: var(--main-text-shadow);
+    }
+
+    .main-body {
+        margin-top: 20px;
+        line-height: 1.5;
+    }
+
+    .inline-link {
+        color: var(--color-primary-light)
+    }
+
+    .inline-link:hover {
+        color: var(--color-white)
+    }
+
+    .link-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        margin: 10px 0px;
+        gap: 2rem;
+    }
+
+    @media (max-width: 640px) {
+
+        #about {
+            --main-font-size: 1rem;
+            --link-font-size: 1rem;
+        }
+
+        .content {
+            max-width: 95vw;
+        }
+
+        .link-container {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            gap: 0.75rem;
+        }
+    }
+
+    .contact-link {
+        font-size: var(--link-font-size);
+        color: var(--color-primary-light);
+        font-style: italic;
+        font-weight: bold;
+        text-shadow: var(--main-text-shadow);
+    }
+
+    .contact-link:hover {
+        color: var(--color-contrast);
+    }
+
+    .contact-link:before {
+        background-color: var(--color-contrast) !important;
+    }
+
+    .contact-btn-link {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #fefefe;
+        font-size: var(--link-font-size);
+        text-shadow: var(--main-text-shadow);
+    }
+
+    .email-tag {
+        font-weight: bold;
+        color: var(--color-primary-light);
+    }
+
+    .email-tag:hover {
+        color: var(--color-contrast);
+    }
+
+    .email-tag:before {
+        background-color: var(--color-contrast);
+    }
+
+    #snackbar {
+        visibility: hidden;
+        min-width: 275px;
+        margin-left: -125px;
+        background-color: rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        color: var(--color-white);
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 5;
+        left: 50%;
+        bottom: 50px;
+    }
+
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    /* Animations to fade the snackbar in and out */
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 50px; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 50px; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {bottom: 50px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {bottom: 50px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+
+</style>
+
+<script>
+
+    const email: string = "adam.iantorno99@gmail.com";
+    const button = document.getElementById("email-btn");
+    const snackbar = document.getElementById("snackbar") as HTMLElement;
+
+    button?.addEventListener('click', () => {
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(email);
+        snackbar.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function() {
+            snackbar.className = snackbar.className.replace("show", ""); 
+        }, 3000)
+    })
+
+</script>

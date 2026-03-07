@@ -1,0 +1,122 @@
+---
+
+import ProjectCard from "../components/ProjectCard.astro";
+import { PORTFOLIO_PROJECTS } from "../data/projects";
+
+const sorted_projects = PORTFOLIO_PROJECTS.sort((p_a, p_b) => {
+    if (p_a.pk < p_b.pk) return 1;
+    if (p_a.pk > p_b.pk) return -1;
+    return 0;
+})
+
+---
+
+<section id="projects">
+    <div class="container">
+        <h1 class="header">Projects</h1>
+        <div>
+            <div class="projects-grid">
+                {sorted_projects.map((project) => <ProjectCard project={project} />)}
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    #projects {
+        --card-general-gap: 0.8rem;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 960px;
+    }
+
+    .header {
+        color: var(--color-white);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 8px 0px;
+        text-shadow: var(--header-shadow)
+    }
+
+    .projects-grid {
+        display: -ms-grid;
+        display: grid;
+
+        -ms-grid-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr) 1.5rem minmax(0, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+
+        .projects-grid {
+            -ms-grid-columns: (minmax(0, 1fr))[2];
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+
+    @media (max-width: 640px) {
+        .projects-grid {
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+
+<script>
+
+    function closeDialog(d: HTMLDialogElement) {
+        d?.close();
+    }
+
+    function openDialog(d: HTMLDialogElement) {
+        d?.showModal();
+
+        d?.addEventListener('click', (e) => {
+            const rect = d.getBoundingClientRect();
+            const clickedOutside = (
+            e.clientX < rect.left ||
+            e.clientX > rect.right ||
+            e.clientY < rect.top ||
+            e.clientY > rect.bottom
+            );
+            
+            if (clickedOutside) {
+                closeDialog(d);
+            }
+        });
+
+        return;
+    }
+
+    // Dialog functionality
+    const projectCards = document.querySelectorAll<HTMLElement>(".project-card");
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const dialogId = card.getAttribute('data-dialog-target');
+            if (dialogId) {
+                const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+
+                const closeBtn = dialog.querySelector('.close-btn');
+                closeBtn?.addEventListener('click', () => {
+                    closeDialog(dialog);
+                })
+
+                openDialog(dialog);
+                return;
+            }
+        });
+    });
+
+</script>

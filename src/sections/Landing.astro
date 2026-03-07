@@ -1,0 +1,128 @@
+---
+
+import CustomTypewriter from "../components/CustomTypewriter.astro"
+
+---
+
+<section id="home">
+    <div class="hero">
+        <div class="container">
+            <div class="content">
+                <CustomTypewriter 
+                    class:list={["name"]}
+                    messages={["Adam", "Iantorno"]}
+                    writeSpeed={150}
+                    waitWritten={800}
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    #home {
+        --name-font-size: 4.5rem;
+        --name-font-size-s: 3.2rem;
+        --name-font-size-xs: 2.5rem;
+    }
+
+    .hero {
+        position: relative;
+        height: 100vh;
+        background-image:
+            -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0))),
+            url(/assets/adambackground.jpg);
+        background-image:
+            -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+            url(/assets/adambackground.jpg);
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+            url(/assets/adambackground.jpg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .container {
+        min-height: 100%;
+        
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .content {
+        text-align: center;
+        padding-left: 32vw;
+        margin-bottom: 16px;
+    }
+
+    .name {
+        color: var(--color-white);
+        text-transform: uppercase;
+        /* letter-spacing: -2px; */
+        font-size: var(--name-font-size);
+        font-weight: 900;
+        text-shadow: 2px 2px 8px var(--color-white);
+    }
+
+    /* Medium screens (≤ 1024px) */
+    @media (max-width: 1024px) {
+        .hero {
+            background-position: 30% center;
+        }
+        
+        .content {
+            padding-left: 0;
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .name {
+            font-size: var(--name-font-size);
+            letter-spacing: -1px;
+        }
+    }
+
+    /* Mobile screens (≤ 640px) */
+    @media (max-width: 640px) {
+        .hero {
+            background-position: 20% center;
+        }
+
+        .name {
+            font-size: var(--name-font-size-s);
+            letter-spacing: -0.5px;
+        }
+    }
+
+    /* Very small screens (≤ 380px) */
+    @media (max-width: 380px) {
+        .content {
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        .name {
+            font-size: var(--name-font-size-xs);
+            letter-spacing: 0;
+        }
+    }
+
+</style>

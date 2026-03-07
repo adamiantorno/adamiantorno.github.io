@@ -1,0 +1,334 @@
+---
+
+import DialogBody from './DialogBody.astro';
+import type { Project } from '../data/projects.ts';
+
+interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+
+
+const dialogId = `project-dialog-${project.pk}`;
+---
+
+<div class="card-wrapper">
+    <button
+        class="project-card"
+        data-dialog-target={dialogId}
+        aria-label={`View details for ${project.title}`}
+    >
+        <div class="card-content">
+            <div class="card-img">
+                <img src={project.cover_image} alt={project.title} class="img-body" />
+            </div>
+
+            <div class="card-header">
+                {project.title}
+            </div>
+
+            <div class="card-tags">
+                {project.tags?.map((tag) => <span class="p-tag">{tag} </span>)}
+            </div>
+
+            <div class="card-desc">
+                {project.description}
+            </div>
+
+            <div class="details-link">click for more details</div>
+        </div>
+    </button>
+</div>
+
+<!-- Hidden dialog -->
+<dialog id={dialogId} class="project-dialog">
+    <div class="dialog-header">
+        <div class="dialog-meta">
+            <span class="dialog-title">{project.title}</span>
+            {
+                project.tags && (
+                    <div class="dialog-tags">
+                        {project.tags?.map((tag) => (
+                            <span class="dialog-tag">{tag}</span>
+                        ))}
+                    </div>
+                )
+            }
+        </div>
+        <button class="close-btn" aria-label="Close dialog"> ✕ </button>
+    </div>
+
+    <div class="dialog-main-wrapper">
+        <DialogBody dialog={project.dialog_body} />
+    </div>
+</dialog>
+
+<style>
+
+    .card-wrapper {
+        height: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .project-card {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-primary-dark);
+        border-radius: 3px;
+        border: none;
+        overflow: hidden;
+        min-height: 400px;
+        z-index: 1;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        text-align: left;
+
+        -webkit-transition:
+            -webkit-transform 0.25s ease,
+            -webkit-box-shadow 0.25s ease;
+        -o-transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease,
+            -webkit-transform 0.25s ease,
+            -webkit-box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+        -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+        transform: translateY(-3px);
+        -webkit-box-shadow: 0 0px 35px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card:focus, .project-card:focus-visible {
+        border: none;
+    }
+
+    .card-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+
+        padding: 0.8rem;
+    }
+
+    .card-img {
+        width: 100%;
+        height: 170px;
+        overflow: hidden;
+        padding-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .img-body {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .card-header {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.7rem;
+        color: var(--color-contrast);
+    }
+
+    .card-tags {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        gap: 0.4rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .p-tag {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        color: var(--color-primary-light);
+    }
+
+    .card-desc {
+        color: var(--color-off-white);
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+
+    .details-link {
+        margin-top: auto;
+        padding-top: 0.8rem;
+        font-size: 0.75rem;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        color: var(--color-light-grey);
+        opacity: 0.6;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        -webkit-transition: opacity 0.2s ease;
+        -o-transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease;
+    }
+
+    /* =========================
+    Dialog
+    ========================= */
+
+    .project-dialog {
+        width: 75vw;
+        max-height: 90vh;
+        border: none;
+        border-radius: 8px;
+        background: var(--color-primary-dark);
+        color: var(--color-off-white);
+        display: none;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .project-dialog[open] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .project-dialog::-webkit-backdrop {
+        background: rgba(0, 0, 0, 0.6);
+        -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px);
+    }
+
+    .project-dialog::backdrop {
+        background: rgba(0, 0, 0, 0.6);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
+
+    .dialog-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+
+        padding: 1.5rem 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .dialog-meta {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        gap: 0.75rem;
+    }
+
+    .dialog-title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: var(--color-contrast);
+    }
+
+    .dialog-tags {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        gap: 0.5rem;
+    }
+
+    .dialog-tag {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        color: var(--color-primary-light);
+    }
+
+    .close-btn {
+        background: transparent;
+        border: none;
+        font-size: 1.2rem;
+        color: #ffffff;
+        cursor: pointer;
+        opacity: 0.6;
+        -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+        -o-transition: opacity 0.2s ease, transform 0.2s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+        opacity: 1;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .dialog-main-wrapper {
+        padding: 2rem 3rem;
+        overflow-y: auto;
+    }
+
+    @media (max-width: 640px) {
+        .dialog-tag {
+            font-size: 0.65rem;
+            padding: 4px 8px;
+        }
+    }
+
+</style>
