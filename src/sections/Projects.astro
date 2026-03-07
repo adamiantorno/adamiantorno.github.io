@@ -25,27 +25,50 @@ const sorted_projects = PORTFOLIO_PROJECTS.sort((p_a, p_b) => {
 <style>
 
     #projects {
-        --color-white: #fff;
+        --card-general-gap: 0.8rem;
     }
 
     .container {
         margin: 0 auto;
         width: 100%;
-        max-width: 1200px;
+        max-width: 960px;
     }
 
     .header {
-        color: #fff;
+        color: var(--color-white);
         text-transform: uppercase;
         font-weight: 700;
-        margin: 10px 0px;
-        text-shadow: 0 0 5px #000, 0px 0px 50px #000;
+        margin: 8px 0px;
+        text-shadow: var(--header-shadow)
     }
 
     .projects-grid {
+        display: -ms-grid;
         display: grid;
+
+        -ms-grid-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr) 1.5rem minmax(0, 1fr);
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
         gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+
+        .projects-grid {
+            -ms-grid-columns: (minmax(0, 1fr))[2];
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+
+    @media (max-width: 640px) {
+        .projects-grid {
+            -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr;
+        }
     }
 
 </style>

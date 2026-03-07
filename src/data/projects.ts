@@ -345,7 +345,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
     description: `A pick-and-place robotic arm that uses object detection and 
                   inverse kinematics calculations to move objects autonomously`,
     categories: ["Software", "Electrical"],
-    tags: ["Python", "C++", "Arduino", "Motor Drivers"],
+    tags: ["Python", "C++", "Arduino", "Motor Drivers", "OpenCV"],
     cover_image: "src/data/images/coverRobotArm.png",
     dialog_body: {
       overview: [
@@ -515,12 +515,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
         {
           caption: "Capstone Symposium Poster",
           ref: "src/data/images/capstonePoster.png",
-        },
-        {
-          caption: "Live Group Picture at Symposium",
-          ref: "src/data/images/coverTurnCare.JPEG",
-        },
-
+        }
       ]
     }
   }

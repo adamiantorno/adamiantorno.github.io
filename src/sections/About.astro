@@ -13,7 +13,7 @@
                 <a href="https://electranstech.com/"             
                     target="_blank"
                     rel="noreferrer noopener"
-                    class="inline-link">
+                    class="underline-link inline-link">
                     @ Electrans Technologies Ltd.</a>, where we've built an autonomous 
                 coupling solution for the commerical vehicle industry. Previously 
                 graduated from the University of Waterloo with a Bachelor's of Applied 
@@ -28,19 +28,19 @@
             </p>
             <div class="link-container">
                 <a 
-                    class="inline-link contact-link" 
+                    class="underline-link contact-link" 
                     target="_blank" 
                     rel="noreferrer noopener" 
                     href="https://github.com/adamiantorno">@Github</a>
                 <a 
-                    class="inline-link contact-link" 
+                    class="underline-link contact-link" 
                     target="_blank" 
                     rel="noreferrer noopener" 
                     href="https://www.linkedin.com/in/adamiantorno/">@LinkedIn</a>
             </div>
             <div class="link-container">
-                <button class="contact-btn-link inline-link" id="email-btn">Email: 
-                    <span class="email-tag">adam [dot] iantorno99 [at] gmail [dot] com</span>
+                <button class="contact-btn-link" id="email-btn">Email: 
+                    <span class="email-tag underline-link">adam [dot] iantorno99 [at] gmail [dot] com</span>
                 </button>
             </div>
         </div>
@@ -52,33 +52,43 @@
 
     #about {
         --main-text-shadow: 0 0 5px #000, 0 2px 16px #1d1631, 0px 0px 50px #000;
-        /* --link-color-1: #c6bbe2; */
-        --link-color-1: #f18805;
-        --link-color-2: #DE73A7;
-        --main-text-font-size: 1.3rem;
-        --link-font-size: 1.2rem;
+        --main-font-size: 1.05rem;
+        --link-font-size: 1rem;
     }
 
 
     .container {
         width: 100%;
-        max-width: 1200px;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 2rem 1.5rem;
+        padding: 2rem;
     }
 
     .content {
-        max-width: 60vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+
         text-align: center;
+        margin: 0 auto;
     }
 
     .text {
-        font-size: var(--main-text-font-size);
-        color: #fefefe;
+        font-size: var(--main-font-size);
+        color: var(--color-white);
         text-shadow: var(--main-text-shadow);
     }
 
@@ -88,47 +98,70 @@
     }
 
     .inline-link {
-        position: relative;
-        color: var(--link-color-2);
-        text-decoration: none;
-        white-space: none;
+        color: var(--color-primary-light)
     }
 
     .inline-link:hover {
-        color: white;
-    }
-
-    .inline-link::before {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        background-color: #fefefe;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-
-    .inline-link:hover::before {
-        transform: scaleX(1);
+        color: var(--color-white)
     }
 
     .link-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+
         margin: 10px 0px;
         gap: 2rem;
     }
 
+    @media (max-width: 640px) {
+
+        #about {
+            --main-font-size: 1rem;
+            --link-font-size: 1rem;
+        }
+
+        .content {
+            max-width: 95vw;
+        }
+
+        .link-container {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+
+            gap: 0.75rem;
+        }
+    }
+
     .contact-link {
         font-size: var(--link-font-size);
+        color: var(--color-primary-light);
         font-style: italic;
         font-weight: bold;
         text-shadow: var(--main-text-shadow);
+    }
+
+    .contact-link:hover {
+        color: var(--color-contrast);
+    }
+
+    .contact-link:before {
+        background-color: var(--color-contrast) !important;
     }
 
     .contact-btn-link {
@@ -143,7 +176,15 @@
 
     .email-tag {
         font-weight: bold;
-        color: var(--link-color-1);
+        color: var(--color-primary-light);
+    }
+
+    .email-tag:hover {
+        color: var(--color-contrast);
+    }
+
+    .email-tag:before {
+        background-color: var(--color-contrast);
     }
 
     #snackbar {
@@ -151,8 +192,9 @@
         min-width: 275px;
         margin-left: -125px;
         background-color: rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        color: #fefefe;
+        color: var(--color-white);
         text-align: center;
         border-radius: 2px;
         padding: 16px;
