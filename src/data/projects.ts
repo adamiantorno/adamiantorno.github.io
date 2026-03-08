@@ -1,4 +1,5 @@
 
+
 export interface Project {
   pk: number;
   title: string;
@@ -28,6 +29,49 @@ export interface Image {
   caption: string
 }
 
+import coverCftTracker from './images/coverCftracker.png'
+import cftrackerInput from "./images/cftrackerInput.png"
+import cftrackerFriends from "./images/cftrackerFriends.png"
+import cftrackerShow from "./images/cftrackerShow.png"
+import cftrackerRaces from "./images/cftrackerRaces.png"
+import coverCftracker from "./images/coverCftracker.png"
+
+import coverQuad from "./images/coverQuad.png"
+import quadCircuitSchema from "./images/quadCircuitSchema.jpg"
+import quadComponents from "./images/quadComponents.jpg"
+import quadCircuitBoard from "./images/quadCircuitBoard.png"
+
+import bracketDisplay from "./images/bracketDisplay.png"
+import coverBracket from "./images/coverBracket.jpg"
+
+import arduinoInitial from "./images/arduinoInitial.png"
+import arduinoCad from "./images/arduinoCad.png"
+import arduinoSolder from "./images/arduinoSolder.jpeg"
+import coverArduino from "./images/coverArduino.jpg"
+
+import hilMounts from "./images/hilMounts.png"
+import hilCad from "./images/hilCad.png"
+import hilArduinoBread from "./images/hilArduinoBread.jpg"
+import hilArduinoCircuit from "./images/hilArduinoCircuit.png"
+import coverHil from "./images/coverHil.jpg"
+
+import coverRobotArm from "./images/coverRobotArm.png"
+import RobotArmBody from "./images/RobotArmBody.png"
+import robotArmEngSpec from "./images/robotArmEngSpec.png"
+import robotArmGripperDesigns from "./images/robotArmGripperDesigns.png"
+import robotArmManipulatorDesign from "./images/robotArmManipulatorDesign.png"
+import robotArmBreadboardCircuit from "./images/robotArmBreadboardCircuit.png"
+import robotArmObjectDetect from "./images/robotArmObjectDetect.jpg"
+
+import coverTurnCare from "./images/coverTurnCare.jpeg"
+import capstonePrototypeMattress from "./images/capstonePrototypeMattress.png"
+import capstoneAssemblyAirCell from "./images/capstoneAssemblyAirCell.png"
+import capstoneAppComparison from "./images/capstoneAppComparison.png"
+import capstoneSensorHousing from "./images/capstoneSensorHousing.png"
+import capstonePressureSensorHousing from "./images/capstonePressureSensorHousing.png"
+import capstoneSequenceDiagram from "./images/capstoneSequenceDiagram.png"
+import capstonePoster from "./images/capstonePoster.png"
+
 export const PORTFOLIO_PROJECTS: Project[] = [
   {
     pk: 1,
@@ -37,7 +81,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   weekly footprint`,
     categories: ["Software"],
     tags: ["Django (Python)", "HTML & CSS", "Javascript", "SQL"],
-    cover_image: "src/data/images/coverCftracker.png",
+    cover_image: coverCftTracker.src,
     dialog_body: {
       overview: [
         `On August 9th, 2021, the Intergovernmental Panel on Climate Change (IPCC)
@@ -89,23 +133,23 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "Input Page",
-          ref: "src/data/images/cftrackerInput.png"
+          ref: cftrackerInput.src
         },
         {
           caption: "Friends Page",
-          ref: "src/data/images/cftrackerFriends.png"
+          ref: cftrackerFriends.src
         },
         {
           caption: "Race Page",
-          ref: "src/data/images/cftrackerShow.png"
+          ref: cftrackerShow.src
         },
         {
           caption: "Race list Page",
-          ref: "src/data/images/cftrackerRaces.png"
+          ref: cftrackerRaces.src
         },
         {
           caption: "Profile Page",
-          ref: "src/data/images/coverCftracker.png"
+          ref: coverCftracker.src
         },
       ]
     }
@@ -117,7 +161,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   - powered by an Arduino, gyroscope, and brushless motors`,
     categories: ["Electrical", "Software"],
     tags: ["C++", "Arduino", "Soldering", "Sourcing Components"],
-    cover_image: "src/data/images/coverQuad.png",
+    cover_image: coverQuad.src,
     dialog_body: {
       overview: [
         `As I was exposed to new aspects of engineering from my co-ops, I realized 
@@ -155,19 +199,19 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "Quadcopter reference electrical schematic",
-          ref: "src/data/images/quadCircuitSchema.jpg",
+          ref: quadCircuitSchema.src,
         },
         {
           caption: "Quadcopter components",
-          ref: "src/data/images/quadComponents.jpg",
+          ref: quadComponents.src,
         },
         {
           caption: "Connection between Arduino and Gyro",
-          ref: "src/data/images/quadCircuitBoard.png",
+          ref: quadCircuitBoard.src,
         },
         {
           caption: "Quadcopter cover photo",
-          ref: "src/data/images/coverQuad.png",
+          ref: coverQuad.src,
         }
       ]
     }
@@ -179,7 +223,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   for pneumatic cylinders that will be placed on heavy-duty vehicle.`,
     categories: ["Mechanical"],
     tags: ["SolidWorks", "Sheet Metal", "Engineering Drawings"],
-    cover_image: "src/data/images/coverBracket.jpg",
+    cover_image: coverBracket.src,
     dialog_body: {
       overview: [
         `For this project I modelled two different metal brackets in Solidworks 
@@ -197,11 +241,11 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "Bracket drawings & built",
-          ref: "src/data/images/bracketDisplay.png",
+          ref: bracketDisplay.src,
         },
         {
           caption: "Bracket Installed",
-          ref: "src/data/images/coverBracket.jpg",
+          ref: coverBracket.src,
         },
       ]
     }
@@ -213,7 +257,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   control a test fixture.`,
     categories: ["Mechanical"],
     tags: ["SolidWorks", "I2C", "3D Printing", "Soldering", "Sourcing Components"],
-    cover_image: "src/data/images/coverArduino.jpg",
+    cover_image: coverArduino.src,
     dialog_body: {
       overview: [
         `This was a subproject for my Hardware-in-Loop (HIL) Test fixture project.`,
@@ -249,19 +293,19 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "Initial implementation of test fixture Arduino",
-          ref: "src/data/images/arduinoInitial.png",
+          ref: arduinoInitial.src,
         },
         {
           caption: "3D CAD of Arduino enclosure",
-          ref: "src/data/images/arduinoCad.png",
+          ref: arduinoCad.src,
         },
         {
           caption: "Arduino inside mounted enclosure",
-          ref: "src/data/images/arduinoSolder.jpeg",
+          ref: arduinoSolder.src,
         },
         {
           caption: "Final version of the product",
-          ref: "src/data/images/coverArduino.jpg",
+          ref: coverArduino.src,
         },
       ]
     }
@@ -273,7 +317,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   firmware logic before integrating them into a production environment`,
     categories: ["Mechanical", "Electrical", "Software"],
     tags: ["C++", "Arduino", "SolidWorks", "Altium365", "CAN (J1939)"],
-    cover_image: "src/data/images/coverHil.jpg",
+    cover_image: coverHil.src,
     dialog_body: {
       overview: [
         `During my co-op, the engineers at Electrans Technologies had completed 
@@ -318,23 +362,23 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "3D-printed mounts for pneumatic cylinders, proximity sensors, latch, and motor",
-          ref: "src/data/images/hilMounts.png",
+          ref: hilMounts.src,
         },
         {
           caption: "Full CAD of HIL Fixture",
-          ref: "src/data/images/hilCad.png",
+          ref: hilCad.src,
         },
         {
           caption: "HIL Electrical Circuit Breadboard",
-          ref: "src/data/images/hilArduinoBread.jpg",
+          ref: hilArduinoBread.src,
         },
         {
           caption: "HIL Electrical Schematic",
-          ref: "src/data/images/hilArduinoCircuit.png",
+          ref: hilArduinoCircuit.src,
         },
         {
           caption: "Final version of the product",
-          ref: "src/data/images/coverHil.jpg",
+          ref: coverHil.src,
         },
       ]
     }
@@ -346,7 +390,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   inverse kinematics calculations to move objects autonomously`,
     categories: ["Software", "Electrical"],
     tags: ["Python", "C++", "Arduino", "Motor Drivers", "OpenCV"],
-    cover_image: "src/data/images/coverRobotArm.png",
+    cover_image: coverRobotArm.src,
     dialog_body: {
       overview: [
         `My favourite course during my 3rd year at the University of Waterloo 
@@ -394,35 +438,27 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "Robot Arm Final Product",
-          ref: "src/data/images/RobotArmBody.png",
+          ref: RobotArmBody.src,
         },
         {
           caption: "Engineering Spec",
-          ref: "src/data/images/robotArmEngSpec.png",
+          ref: robotArmEngSpec.src,
         },
         {
           caption: "Gripper Designs",
-          ref: "src/data/images/robotArmGripperDesigns.png",
+          ref: robotArmGripperDesigns.src,
         },
         {
           caption: "Manipulator Designs",
-          ref: "src/data/images/robotArmManipulatorDesign.png",
+          ref: robotArmManipulatorDesign.src,
         },
         {
           caption: "Full Robot Arm Circuit",
-          ref: "src/data/images/robotArmBreadboardCircuit.png",
+          ref: robotArmBreadboardCircuit.src,
         },
-        // {
-        //   caption: "Robot Arm Software Diagram",
-        //   ref: "src/data/images/robotArmSoftwareFlow.png",
-        // },
-        // {
-        //   caption: "Robot Arm Inverse Kinematics Equations",
-        //   ref: "src/data/images/robotArmKinematics.png",
-        // },
         {
           caption: "Robot Arm HSV POC",
-          ref: "src/data/images/robotArmObjectDetect.jpg",
+          ref: robotArmObjectDetect.src,
         },
       ]
     }
@@ -435,7 +471,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
                   monitoring and manual control`,
     categories: ["Electrical", "Software"],
     tags: ["Python", "Raspberry Pi", "I2C", "Multithreading", "PCB Design"],
-    cover_image: "src/data/images/coverTurnCare.JPEG",
+    cover_image: coverTurnCare.src,
     dialog_body: {
       overview: [
         `Pressure ulcers, also known as bed sores, are an affliction that breaks 
@@ -490,31 +526,31 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "In-progress POC Mattress and Pneumatic Circuit",
-          ref: "src/data/images/capstonePrototypeMattress.png",
+          ref: capstonePrototypeMattress.src,
         },
         {
           caption: "Assembling Air Cell",
-          ref: "src/data/images/capstoneAssemblyAirCell.png",
+          ref: capstoneAssemblyAirCell.src,
         },
         {
           caption: "Live App data with High Cell Pressure",
-          ref: "src/data/images/capstoneAppComparison.png",
+          ref: capstoneAppComparison.src,
         },
         {
           caption: "CAD of Sensor Housing for Air Cell",
-          ref: "src/data/images/capstoneSensorHousing.png",
+          ref: capstoneSensorHousing.src,
         },
         {
           caption: "Mounted Pressure Sensor in Housing",
-          ref: "src/data/images/capstonePressureSensorHousing.png",
+          ref: capstonePressureSensorHousing.src,
         },
         {
           caption: "Software Sequence Diagram",
-          ref: "src/data/images/capstoneSequenceDiagram.png",
+          ref: capstoneSequenceDiagram.src,
         },
         {
           caption: "Capstone Symposium Poster",
-          ref: "src/data/images/capstonePoster.png",
+          ref: capstonePoster.src,
         }
       ]
     }
