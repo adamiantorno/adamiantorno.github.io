@@ -56,7 +56,7 @@ import hilArduinoCircuit from "./images/hilArduinoCircuit.png"
 import coverHil from "./images/coverHil.jpg"
 
 import coverRobotArm from "./images/coverRobotArm.png"
-import RobotArmBody from "./images/RobotArmBody.png"
+import robotArmBody from "./images/robotArmBody.png"
 import robotArmEngSpec from "./images/robotArmEngSpec.png"
 import robotArmGripperDesigns from "./images/robotArmGripperDesigns.png"
 import robotArmManipulatorDesign from "./images/robotArmManipulatorDesign.png"
@@ -438,7 +438,7 @@ export const PORTFOLIO_PROJECTS: Project[] = [
       gallery: [
         {
           caption: "Robot Arm Final Product",
-          ref: RobotArmBody.src,
+          ref: robotArmBody.src,
         },
         {
           caption: "Engineering Spec",
