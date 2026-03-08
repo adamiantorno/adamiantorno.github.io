@@ -63,7 +63,7 @@ import robotArmManipulatorDesign from "./images/robotArmManipulatorDesign.png"
 import robotArmBreadboardCircuit from "./images/robotArmBreadboardCircuit.png"
 import robotArmObjectDetect from "./images/robotArmObjectDetect.jpg"
 
-import coverTurnCare from "./images/coverTurnCare.jpeg"
+import coverTurnCare from "./images/coverTurnCare.jpg"
 import capstonePrototypeMattress from "./images/capstonePrototypeMattress.png"
 import capstoneAssemblyAirCell from "./images/capstoneAssemblyAirCell.png"
 import capstoneAppComparison from "./images/capstoneAppComparison.png"
