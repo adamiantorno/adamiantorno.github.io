@@ -103,7 +103,12 @@ const has_grid_content =
                     {
                         dialog.gallery.map((img) => (
                             <div class="gallery-img">
-                                <img src={img.ref} alt="" class="img-body" />
+                                <img 
+                                src={img.ref} 
+                                alt={img.caption}
+                                class="img-body"
+                                loading="lazy"
+                                format="webp"/>
                                 <em class="img-caption">{img.caption}</em>
                             </div>
                         ))

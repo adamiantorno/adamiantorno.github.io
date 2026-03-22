@@ -21,7 +21,14 @@ const dialogId = `project-dialog-${project.pk}`;
     >
         <div class="card-content">
             <div class="card-img">
-                <img src={project.cover_image} alt={project.title} class="img-body" />
+                <img 
+                 src={project.cover_image} 
+                 alt={project.title} 
+                 loading="eager"
+                 decoding="sync"
+                 fetchpriority="high"
+                 format="webp"
+                 class="img-body" />
             </div>
 
             <div class="card-header">
